@@ -1,0 +1,102 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "54917d89a90fbb616511000b7fd2e1e6",
+    "packages": [
+        {
+            "name": "dg/rss-php",
+            "version": "v1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dg/rss-php.git",
+                "reference": "da0307f86bacc89cb6ba0e651e5deb5e92d6abdb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dg/rss-php/zipball/da0307f86bacc89cb6ba0e651e5deb5e92d6abdb",
+                "reference": "da0307f86bacc89cb6ba0e651e5deb5e92d6abdb",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3"
+            ],
+            "authors": [
+                {
+                    "name": "David Grudl",
+                    "homepage": "http://davidgrudl.com"
+                }
+            ],
+            "description": "RSS & Atom Feeds for PHP is a very small and easy-to-use library for consuming an RSS and Atom feed.",
+            "homepage": "https://github.com/dg/rss-php",
+            "keywords": [
+                "atom",
+                "feed",
+                "rss"
+            ],
+            "time": "2014-01-17 17:12:40"
+        },
+        {
+            "name": "mustache/mustache",
+            "version": "v2.7.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bobthecow/mustache.php.git",
+                "reference": "fdf41dd673dc99b41d60992470dbae94ae0b6ba1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bobthecow/mustache.php/zipball/fdf41dd673dc99b41d60992470dbae94ae0b6ba1",
+                "reference": "fdf41dd673dc99b41d60992470dbae94ae0b6ba1",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2.4"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Mustache": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Justin Hileman",
+                    "email": "justin@justinhileman.info",
+                    "homepage": "http://justinhileman.com"
+                }
+            ],
+            "description": "A Mustache implementation in PHP.",
+            "homepage": "https://github.com/bobthecow/mustache.php",
+            "keywords": [
+                "mustache",
+                "templating"
+            ],
+            "time": "2014-08-26 19:50:10"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}
