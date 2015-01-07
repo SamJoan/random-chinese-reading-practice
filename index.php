@@ -30,18 +30,25 @@ function feed_data_page($category, $page) {
 function feed_data_get($category) {
   $data = array();
   for($i = 0; $i < 100; $i++) {
-    $data[$i] = feed_data_page($category, $i);
+    $page_data = feed_data_page($category, $i);
+    $data = array_merge($data, $page_data);
     if($i == 0) {
-      $per_page = count($data[$i]);
+      $per_page = count($page_data);
     }
-    $last_page = count($data[$i]) < $per_page;
+    $last_page = count($page_data) < $per_page;
     if($last_page) {
       break;
     }
   }
-  echo sizeof($data);
-  echo sizeof($data[0]);
-  echo sizeof($data[7]);
+
+  return $data;
+}
+
+function feed_random_get($data) {
+  $nb = rand(0, count($data) -1);
+  $random = $data[$nb];
+
+  return $random;
 }
 
 if(!isset($_POST['category'])) {
@@ -54,10 +61,24 @@ if(!isset($_POST['category'])) {
     throw new Exception("Invalid category.");
   }
 
-  // https://github.com/gilbitron/PHP-SimpleCache
-  $fd = feed_data_get($category);
+  $cache = new Gilbitron\Util\SimpleCache();
+  $cache->cache_path = 'cache/';
+  $cache->cache_time = 7800;
+
+  $data_label = 'cache-'.$category;
+
+  if($data = $cache->get_cache($data_label)){
+    $data = json_decode($data);
+  } else {
+    $data = feed_data_get($category);
+    $cache->set_cache($data_label, json_encode($data));
+  }
+
+  $random = feed_random_get($data);
+  header("Location: $random->link");
+  exit();
 }
 
-if($tpl_file) {
+if(@$tpl_file) {
   echo tpl_render($tpl_file, $tpl_vars);
 }
