@@ -63,7 +63,7 @@ if(!isset($_POST['category'])) {
 
   $cache = new Gilbitron\Util\SimpleCache();
   $cache->cache_path = 'cache/';
-  $cache->cache_time = 7800;
+  $cache->cache_time = PHP_INT_MAX;
 
   $data_label = 'cache-'.$category;
 
